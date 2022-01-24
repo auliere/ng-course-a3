@@ -10,5 +10,18 @@
         </ol>
       </div>
     </div>
-  </div>
-  
+</div>
+<hr />
+<button type="button" (click)="onButtonClick()">Display Details</button>
+<p [hidden]="!pVisible">Toggle visibility with hidden attribute</p>
+<hr />
+<p *ngIf="pVisible">Toggle visibility with ng-If directive</p>
+<hr />
+<div>
+    <div 
+        *ngFor="let log of clickLog; let i = index" 
+        [ngClass]="{ 'blue' : i >= 5 }"
+        [ngStyle]="{ 'color': i >= 5 ? 'white' : 'black' }">
+        {{ i + 1 }}. {{ log }}
+    </div>
+</div>
